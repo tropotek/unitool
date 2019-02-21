@@ -32,54 +32,28 @@ ob_start();
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">tk2simple</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="supervisorManager.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" var="nav"></nav>
 
   <div class="container-fluid">
-    <h1><a href="index.php">Simple Tk Project</a></h1>
-    <p>This is a template for using the Tk Framework standalone.</p>
-    <hr/>
-    <p>&nbsp;</p>
     <div class="content" var="content">
-
-    <ul>
-      <li><a href="supervisorManager.php">Supervisor Manager</a></li>
-    </ul>
-
+      <h1>FVAS Toolbox</h1>
+      <p>A site to host FVAS eLearning Tools and scripts...</p>
     </div>
-    <p>&nbsp;</p>
-    <hr/>
   </div>
+
+
 </body>
 </html>
 <?php
 $buff = trim(ob_get_clean());
 $template = \Dom\Template::load($buff);
+$template->replaceTemplate('nav', \App\Ui\Nav::create()->show());
 
 
-
-$template->prependHtml('content', '<h2>This is the `Hello World` Dynamic text.</h2>');
-
-vd('Test Dump');
-\Tk\Log::warning('Test Log');
+//$template->prependHtml('content', '<h2>This is the `Hello World` Dynamic text.</h2>');
+//vd('Test Dump');
+//\Tk\Log::warning('Test Log');
 
 
 echo $template->toString();

@@ -78,8 +78,9 @@ class Bootstrap
         \Tk\ErrorHandler::getInstance($config->getLog());
 
         // Initiate the default database connection
-        $config->getDb();
-        $config->replace(\Tk\Db\Data::create()->all());
+        $db = $config->getDb();
+        if ($db)
+            $config->replace(\Tk\Db\Data::create()->all());
 
         // Return if using cli (Command Line)
         if ($config->isCli()) return $config;

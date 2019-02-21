@@ -60,7 +60,7 @@ class Config extends \Tk\Config
      */
     public function getSessionAdapter()
     {
-        if (!$this->get('session.adapter')) {
+        if (!$this->get('session.adapter') && $this->getDb()) {
             //$adapter = null;
             $adapter = new \Tk\Session\Adapter\Database($this->getDb(), new \Tk\Encrypt());
             $this->set('session.adapter', $adapter);
@@ -89,7 +89,8 @@ class Config extends \Tk\Config
                 $this->set('db', $pdo);
             } catch (\Exception $e) {
                 error_log('<p>Config::getDb(): ' . $e->getMessage() . '</p>');
-                exit;
+                var_dump($e->__toString());
+                //exit;
             }
         }
         return $this->get('db');
