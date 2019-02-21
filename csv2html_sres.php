@@ -82,7 +82,7 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
       <div choice="csv-table">
         <div class="csv-table" var="csv-table"></div>
         <div>
-          <a href="#" class="btn btn-success" title="Download Html File" target="_blank" var="download"><i class="fa fa-download"></i> Download</a>
+          <a href="#" class="btn btn-success" title="Download Html File" var="download"><i class="fa fa-download"></i> Download</a>
           <a href="#" class="btn btn-primary" title="View Html File" target="_blank" var="view"><i class="fa fa-eye"></i> View</a>
           <a href="#" class="btn btn-default" title="Clear The Data" onclick="return confirm('Are you sure you want to remove the csv data from memory?');" var="clear"><i class="fa fa-trash"></i> Clear</a>
         </div>
@@ -133,7 +133,7 @@ function makeTable($csvData) {
     $tpl = <<<HTML
 <table var="table" cellpadding="4" cellspacing="0" border="1">
   <tr var="row" repeat="row">
-    <td var="cell"><a href="#" var="url" target="_blank">&nbsp;</a></td>
+    <td var="cell"><a href="#" var="url">&nbsp;</a></td>
   </tr>
 </table>
 HTML;
