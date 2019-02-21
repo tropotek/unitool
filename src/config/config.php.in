@@ -1,0 +1,24 @@
+<?php
+/*
+ * @author Michael Mifsud <info@tropotek.com>
+ * @link http://www.tropotek.com/
+ * @license Copyright 2015 Michael Mifsud
+ */
+$config = \Tk\Config::getInstance();
+
+
+// Database access
+$config['db.type'] = 'mysql';
+$config['db.host'] = 'localhost';
+$config['db.name'] = 'table';
+$config['db.user'] = 'username';
+$config['db.pass'] = 'password';
+
+
+// Log/Debug settings
+$config['debug'] = false;
+$config['log.path'] = '/home/user/log/error.log';
+$config['log.level'] = \Psr\Log\LogLevel::INFO;
+$config['system.debug.email'] = 'user@localhost';
+
+

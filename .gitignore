@@ -1,0 +1,11 @@
+/.idea
+/.directory
+/_notes
+/data
+/assets
+/vendor
+/src/config/config.php
+/.htaccess
+*.swp
+*.bak
+

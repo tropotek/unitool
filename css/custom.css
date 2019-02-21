@@ -1,0 +1,84 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+/*************************************/
+/**  \Tk\Table\Renderer\Dom\Table   **/
+
+.tk-table th {
+  white-space: nowrap;
+}
+.tk-table .key {
+  width: 100%;
+}
+.tk-table td {
+  white-space: nowrap;
+}
+
+.tk-table .orderAsc a:after {
+  content: "\e151";
+  font-size: 0.8em;
+  font-weight: normal;
+  padding: 0 0 0 5px;
+  vertical-align: middle;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tk-table .orderDesc a:after {
+  content: "\e152";
+  font-size: 0.8em;
+  font-weight: normal;
+  padding: 0 0 0 5px;
+  vertical-align: middle;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tk-table .tk-actions {
+  margin: 5px 0px;
+}
+.tk-table .btn {
+  margin-right: 5px;
+}
+
+.tk-table .pagination {
+  margin: 0;
+}
+
+
+
+
+/*********************************/
+/** \Tk\Form\Renderer\Dom\Form  **/
+.tk-form .tk-form-events .btn {
+  margin-right: 5px;
+}
+.tk-form.form-inline .tk-form-fields,
+.tk-form.form-inline .tk-form-events {
+  margin-top: 10px;
+  display: inline-block;
+}
+.tk-form.form-inline .tk-form-fields .form-group {
+  margin-right: 5px;
+}
+
+
+.tk-form.form-horizontal .form-group {
+  margin: 10px 0px;
+}
+.tk-form.form-horizontal .tk-form-events {
+  margin-top: 20px;
+}
+
+#contactForm .form-group div.text-danger {
+  margin-left: 26%; padding: 10px 0px;
+}
