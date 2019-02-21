@@ -141,7 +141,7 @@ HTML;
 
     foreach ($csvData as $name => $url) {
       $row = $template->getRepeat('row');
-      $row->insertText('url', htmlentities($name));
+      $row->insertText('url', $name);
       $row->setAttr('url', 'href', $url);
       $row->appendRepeat();
     }
@@ -183,7 +183,7 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
                 for ($c=0; $c < $num; $c++) {
                     if ($c == 0) {   // Column Name
                         $name = $data[$c];
-                    } else if ($c == 6) {    // Single Mode Link
+                    } else if ($c == 5) {    // Single Mode Link
                         $url = $data[$c];
                     }
                 }
