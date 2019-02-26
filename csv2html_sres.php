@@ -133,7 +133,7 @@ function makeTable($csvData) {
     $tpl = <<<HTML
 <table var="table" cellpadding="4" cellspacing="0" border="1">
   <tr var="row" repeat="row">
-    <td var="cell"><a href="#" var="url">&nbsp;</a></td>
+    <td var="cell"><a href="#" var="url" target="_blank">&nbsp;</a></td>
   </tr>
 </table>
 HTML;
