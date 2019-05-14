@@ -162,7 +162,7 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
     $fileField->isValid();
 
     if ($fileField->hasFile()) {
-        if(\Tk\File::getExtension($fileField->getUploadedFile()->getFilename()) != 'csv') {
+        if($fileField->getUploadedFile()->getClientOriginalExtension() != 'csv') {
             $fileField->addError('Invalid File Type. (.csv only)');
         }
     }
@@ -174,7 +174,7 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
     if ($fileField->hasFile()) {
         \Tk\Alert::addSuccess('File Successfully imported');
         $csvData = array();
-        if (($handle = fopen($fileField->getUploadedFile()->getFile(), 'r')) !== false) {
+        if (($handle = fopen($fileField->getUploadedFile()->getPathname(), 'r')) !== false) {
             while (($data = fgetcsv($handle, 1000, ',')) !== false) {
                 $num = count($data);
                 if ($data[0] == 'Column name' || $data[0] == '!BARCODE') continue;
