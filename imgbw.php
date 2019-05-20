@@ -54,7 +54,7 @@ input[type="file"] {
   <nav class="navbar navbar-inverse navbar-fixed-top" var="nav"></nav>
 
   <div class="container-fluid">
-    <div class="container content">
+    <div class="container">
       <h1>Image To Grayscale</h1>
       <p>Convert a JPEG PNG  or GIF to a black and white image.</p>
 
@@ -89,13 +89,12 @@ input[type="file"] {
 
       <hr/>
 
-      <div class="container img-panel" style="display: none;">
-
-        <div class="row">
+      <div class="row img-panel clearfix" style="display: none;">
+        <div class="col-md-12">
           <a href="#" class="pull-right btn btn-success btn-download" title="Click to download"><i class="fa fa-download"></i> Download</a>
         </div>
-        <br/>
-        <div class="row images text-center">
+        <p>&nbsp;</p>
+        <div class="col-md-12 images text-center">
           <div class="col-sm-6">
             <p class="src-size">999x999</p>
             <img src="#" id="src-img" class="img-responsive" alt="" />

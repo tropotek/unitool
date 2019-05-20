@@ -45,7 +45,7 @@ jQuery(function ($) {
         imgPixels.data[i + 2] = avg;
       }
     }
-    
+
     canvasContext.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
     return canvas.toDataURL();
   }
