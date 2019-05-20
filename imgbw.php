@@ -72,12 +72,12 @@ input[type="file"] {
 
           <div class="form-group">
             <label for="fid-maxWidth" class="control-label">Max Width:</label>
-            <input type="text" name="maxWidth" id="fid-maxWidth" size="4" value="1000"/>
+            <input type="text" name="maxWidth" id="fid-maxWidth" size="4" value="800"/>
           </div>
 
           <div class="form-group">
             <label for="fid-maxHeight" class="control-label">Max Height:</label>
-            <input type="text" name="maxHeight" id="fid-maxHeight" size="4" value="1000"/>
+            <input type="text" name="maxHeight" id="fid-maxHeight" size="4" value="800"/>
           </div>
 
         </form>
