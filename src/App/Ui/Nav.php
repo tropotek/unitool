@@ -53,7 +53,8 @@ class Nav extends \Dom\Renderer\Renderer implements \Dom\Renderer\DisplayInterfa
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="csv2html_sres.php">sres CSV2HTML</a></li>
+                <li><a href="csv2html_sres.php"><i class="fa fa-file-text-o"></i> sres CSV2HTML</a></li>
+                <li><a href="imgbw.php"><i class="fa fa-picture-o"></i> image2BW</a></li>
                 <!--<li><a href="contact.php">Contact</a></li>-->
             </ul>
         </div><!--/.nav-collapse -->
