@@ -11,7 +11,7 @@ ob_start();
   <meta name="description" content=""/>
   <meta name="author" content=""/>
 
-  <title>Simple Tk Project</title>
+  <title>UniTool</title>
 
   <!-- Styles -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
