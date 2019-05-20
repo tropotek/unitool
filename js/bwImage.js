@@ -12,13 +12,29 @@ jQuery(function ($) {
     var canvas = document.createElement('canvas');
     var canvasContext = canvas.getContext('2d');
 
+    var maxW = $('#fid-maxWidth').val();
+    var maxH = $('#fid-maxHeight').val();
+
     var imgW = imgObj.naturalWidth;
     var imgH = imgObj.naturalHeight;
     canvas.width = imgW;
     canvas.height = imgH;
 
-    canvasContext.drawImage(imgObj, 0, 0);
+    if (canvas.width > maxW) {
+      var ratio = maxW/canvas.width;
+      canvas.width = canvas.width * ratio;
+      canvas.height = canvas.height * ratio;
+    }
+    if (canvas.height > maxH) {
+      var ratio = maxH/canvas.height;
+      canvas.width = canvas.width * ratio;
+      canvas.height = canvas.height * ratio;
+    }
+
+    //canvasContext.drawImage(imgObj, 0, 0);
+    canvasContext.drawImage(imgObj, 0, 0, imgW, imgH, 0, 0, canvas.width, canvas.height);
     var imgPixels = canvasContext.getImageData(0, 0, imgW, imgH);
+
 
     for(var y = 0; y < imgPixels.height; y++){
       for(var x = 0; x < imgPixels.width; x++){
@@ -42,9 +58,7 @@ jQuery(function ($) {
       reader.onload = function (e) {
         // TODO: Check the file type/ext
         var allowExtension = ".jpg,.bmp,.gif,.png";
-        console.log(input.value);
         var ext = input.value.substring(input.value.lastIndexOf(".") + 1).toLowerCase();
-        console.log(ext);
         if (allowExtension.indexOf(ext) > -1) {
           $('#src-img').attr('src', e.target.result);
         } else {
@@ -54,11 +68,22 @@ jQuery(function ($) {
 
 
       $('#src-img').on('load', function () {
+        $('.src-size').text(this.naturalWidth + 'x' + this.naturalHeight);
         $('#dst-img').attr('src', gray(this));
-        console.log($('#fid-image').val());
         $('.btn-download').attr('download', 'bw-' + $('#fid-image').val().replace(/\\/g,'/').replace( /.*\//, '' )).attr('href', $('#dst-img').attr('src'));
         $('.img-panel').show();
       });
+
+      $('#dst-img').on('load', function () {
+        $('.dst-size').text(this.naturalWidth + 'x' + this.naturalHeight);
+      });
+
+      $('#fid-maxWidth, #fid-maxHeight').on('change', function () {
+        $('#src-img').attr('src', '');
+        $('#dst-img').attr('src', '');
+        $('.img-panel').hide();
+      });
+
       reader.readAsDataURL(input.files[0]);
     }
   }

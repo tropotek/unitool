@@ -39,6 +39,11 @@ ob_start();
 .images img {
   margin: 10px auto;
 }
+input[type="file"] {
+  display: inline-block;
+}
+
+
 </style>
 
 
@@ -49,7 +54,7 @@ ob_start();
   <nav class="navbar navbar-inverse navbar-fixed-top" var="nav"></nav>
 
   <div class="container-fluid">
-    <div class="content" var="content">
+    <div class="content">
       <h1>Image To Grayscale</h1>
       <p>Convert a JPEG PNG  or GIF to a black and white image.</p>
 
@@ -57,32 +62,37 @@ ob_start();
 
       <div var="alert" choice="alert"></div>
 
-      <form id="upload" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
-        <div class="text-danger" var="form-error" choice="form-error"></div>
+      <form id="upload" method="post" class="form-inline" role="form" enctype="multipart/form-data">
+
         <div class="form-group">
-          <label for="fid-file" class="col-sm-3 control-label">
-            <b>Image File</b>
-          </label>
-          <div class="col-sm-3">
-            <input type="file" name="file" id="fid-image" />
-            <div class="text-danger" var="file-error" choice="file-error"></div>
-          </div>
-          <div class="col-sm-6">
-<!--            <button type="submit" class="btn btn-primary" name="submit">Convert!!!!</button>-->
-          </div>
+          <label for="fid-file" class="control-label">Image File</label>
+          <input type="file" name="file" id="fid-image" />
         </div>
+
+        <div class="form-group">
+          <label for="fid-maxWidth" class="control-label">Max Width:</label>
+          <input type="text" name="maxWidth" id="fid-maxWidth" size="4" value="1000"/>
+        </div>
+
+        <div class="form-group">
+          <label for="fid-maxHeight" class="control-label">Max Height:</label>
+          <input type="text" name="maxHeight" id="fid-maxHeight" size="4" value="1000"/>
+        </div>
+
       </form>
 
       <hr/>
 
       <div class="container img-panel" style="display: none;">
 
-        <div class="row images">
+        <div class="row images text-center">
           <div class="col-sm-6">
             <img src="#" id="src-img" class="img-responsive" alt="" />
+            <p class="src-size">999x999</p>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 text-center">
             <a href="#" class="btn-download" title="Click to download"><img src="#" id="dst-img" class="img-responsive" alt="" /></a>
+            <p class="dst-size">999x999</p>
           </div>
         </div>
         <br/>
@@ -99,29 +109,12 @@ ob_start();
 </body>
 </html>
 <?php
-
-use Tk\Form;
-use Tk\Form\Field;
-use Tk\Form\Event;
-
-$config = \Tk\Config::getInstance();
-$request = $config->getRequest();
-
 $buff = trim(ob_get_clean());
 $template = \Dom\Template::load($buff);
 $template->replaceTemplate('nav', \App\Ui\Nav::create()->show());
 
-
-if ($request->has('view') && $config->getSession()->has('image')) {
-    var_dump('View Image????');
-    exit;
-}
-
-if ($request->has('down') && $config->getSession()->has('image')) {
-    var_dump('Download Image????');
-    //header('Content-Disposition: attachment; filename="'.$filename.'"');
-    exit;
-}
+$config = \Tk\Config::getInstance();
+$request = $config->getRequest();
 
 
 echo $template->toString();
