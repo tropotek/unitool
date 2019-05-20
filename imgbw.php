@@ -62,24 +62,26 @@ input[type="file"] {
 
       <div var="alert" choice="alert"></div>
 
-      <form id="upload" method="post" class="form-inline" role="form" enctype="multipart/form-data">
+      <div class="container">
+        <form id="upload" method="post" class="form-inline" role="form" enctype="multipart/form-data">
 
-        <div class="form-group">
-          <label for="fid-file" class="control-label">Image File</label>
-          <input type="file" name="file" id="fid-image" />
-        </div>
+          <div class="form-group">
+            <label for="fid-file" class="control-label">Image File</label>
+            <input type="file" name="file" id="fid-image" />
+          </div>
 
-        <div class="form-group">
-          <label for="fid-maxWidth" class="control-label">Max Width:</label>
-          <input type="text" name="maxWidth" id="fid-maxWidth" size="4" value="1000"/>
-        </div>
+          <div class="form-group">
+            <label for="fid-maxWidth" class="control-label">Max Width:</label>
+            <input type="text" name="maxWidth" id="fid-maxWidth" size="4" value="1000"/>
+          </div>
 
-        <div class="form-group">
-          <label for="fid-maxHeight" class="control-label">Max Height:</label>
-          <input type="text" name="maxHeight" id="fid-maxHeight" size="4" value="1000"/>
-        </div>
+          <div class="form-group">
+            <label for="fid-maxHeight" class="control-label">Max Height:</label>
+            <input type="text" name="maxHeight" id="fid-maxHeight" size="4" value="1000"/>
+          </div>
 
-      </form>
+        </form>
+      </div>
 
       <hr/>
 
