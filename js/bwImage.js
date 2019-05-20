@@ -45,6 +45,7 @@ jQuery(function ($) {
         imgPixels.data[i + 2] = avg;
       }
     }
+    
     canvasContext.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
     return canvas.toDataURL();
   }
@@ -55,6 +56,7 @@ jQuery(function ($) {
       $('#src-img').attr('src', '');
       $('#dst-img').attr('src', '');
       $('.img-panel').hide();
+      $('.proc').show();
       reader.onload = function (e) {
         // TODO: Check the file type/ext
         var allowExtension = ".jpg,.bmp,.gif,.png";
@@ -70,13 +72,9 @@ jQuery(function ($) {
       $('#src-img').on('load', function () {
         $('.src-size').text(this.naturalWidth + 'x' + this.naturalHeight);
         $('#dst-img').attr('src', gray(this));
-
         var orgFile = $('#fid-image').val().replace(/\\/g,'/').replace( /.*\//, '' );
         var ext = orgFile.substring(orgFile.lastIndexOf(".") + 1);
-
-        console.log(orgFile.substring(0, orgFile.lastIndexOf(".")));
         var filename = orgFile.substring(0, orgFile.lastIndexOf(".")) + '_bw.' + ext;
-
 
         $('.btn-download').attr('download', filename).attr('href', $('#dst-img').attr('src'));
         $('.img-panel').show();
@@ -84,6 +82,7 @@ jQuery(function ($) {
 
       $('#dst-img').on('load', function () {
         $('.dst-size').text(this.naturalWidth + 'x' + this.naturalHeight);
+        $('.proc').hide();
       });
 
       $('#fid-maxWidth, #fid-maxHeight').on('change', function () {

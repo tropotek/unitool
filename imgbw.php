@@ -54,7 +54,7 @@ input[type="file"] {
   <nav class="navbar navbar-inverse navbar-fixed-top" var="nav"></nav>
 
   <div class="container-fluid">
-    <div class="content">
+    <div class="container content">
       <h1>Image To Grayscale</h1>
       <p>Convert a JPEG PNG  or GIF to a black and white image.</p>
 
@@ -62,7 +62,7 @@ input[type="file"] {
 
       <div var="alert" choice="alert"></div>
 
-      <div class="container">
+      <div class="">
         <form id="upload" method="post" class="form-inline" role="form" enctype="multipart/form-data">
 
           <div class="form-group">
@@ -80,6 +80,10 @@ input[type="file"] {
             <input type="text" name="maxHeight" id="fid-maxHeight" size="4" value="800"/>
           </div>
 
+          <div class="proc pull-right" style="display: none;">
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+          </div>
         </form>
       </div>
 
@@ -87,26 +91,27 @@ input[type="file"] {
 
       <div class="container img-panel" style="display: none;">
 
-        <div class="row images text-center">
-          <div class="col-sm-6">
-            <img src="#" id="src-img" class="img-responsive" alt="" />
-            <p class="src-size">999x999</p>
-          </div>
-          <div class="col-sm-6 text-center">
-            <a href="#" class="btn-download" title="Click to download"><img src="#" id="dst-img" class="img-responsive" alt="" /></a>
-            <p class="dst-size">999x999</p>
-          </div>
-        </div>
-        <br/>
-        <div>
+        <div class="row">
           <a href="#" class="pull-right btn btn-success btn-download" title="Click to download"><i class="fa fa-download"></i> Download</a>
         </div>
-
+        <br/>
+        <div class="row images text-center">
+          <div class="col-sm-6">
+            <p class="src-size">999x999</p>
+            <img src="#" id="src-img" class="img-responsive" alt="" />
+          </div>
+          <div class="col-sm-6 text-center">
+            <p class="dst-size">999x999</p>
+            <a href="#" class="btn-download" title="Click to download"><img src="#" id="dst-img" class="img-responsive" alt="" /></a>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
-
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
 
 </body>
 </html>
