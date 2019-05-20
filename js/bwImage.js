@@ -70,7 +70,15 @@ jQuery(function ($) {
       $('#src-img').on('load', function () {
         $('.src-size').text(this.naturalWidth + 'x' + this.naturalHeight);
         $('#dst-img').attr('src', gray(this));
-        $('.btn-download').attr('download', 'bw-' + $('#fid-image').val().replace(/\\/g,'/').replace( /.*\//, '' )).attr('href', $('#dst-img').attr('src'));
+
+        var orgFile = $('#fid-image').val().replace(/\\/g,'/').replace( /.*\//, '' );
+        var ext = orgFile.substring(orgFile.lastIndexOf(".") + 1);
+
+        console.log(orgFile.substring(0, orgFile.lastIndexOf(".")));
+        var filename = orgFile.substring(0, orgFile.lastIndexOf(".")) + '_bw.' + ext;
+
+
+        $('.btn-download').attr('download', filename).attr('href', $('#dst-img').attr('src'));
         $('.img-panel').show();
       });
 
