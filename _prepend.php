@@ -15,8 +15,8 @@ include_once $sitePath.'/src/App/Bootstrap.php';
 $config = \App\Config::getInstance();
 $config->set('composer', $composer);
 
-$config['debug'] = true;
-$config['log.path'] = '/home/mifsudm/log/error.log';
+//$config['debug'] = true;
+//$config['log.path'] = '/home/mifsudm/log/error.log';
 
 $sitePath = dirname(__FILE__);
 /** @var \Composer\Autoload\ClassLoader $composer */
