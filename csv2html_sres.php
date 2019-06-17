@@ -113,18 +113,18 @@ if ($request->has('clear')) {
 
 if ($request->has('view') && $config->getSession()->has('csvData')) {
     $html = makeTable($config->getSession()->get('csvData'));
-    echo $html;
     header('Content-Type: text/html; charset=utf-8');
+    echo $html;
     exit;
 }
 
 if ($request->has('down') && $config->getSession()->has('csvData')) {
     $html = makeTable($config->getSession()->get('csvData'));
     $filename = 'table.html';
-    echo $html;
     header('Content-Type: text/html; charset=utf-8');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="'.$filename.'"');
+    echo $html;
     exit;
 }
 
