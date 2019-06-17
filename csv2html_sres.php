@@ -105,15 +105,20 @@ $buff = trim(ob_get_clean());
 $template = \Dom\Template::load($buff);
 $template->replaceTemplate('nav', \App\Ui\Nav::create()->show());
 
+vd($config->getSession()->all());
+vd($config->getRequest());
+
 $request = $config->getRequest();
 if ($request->has('clear')) {
     $config->getSession()->remove('csvData');
+    vd('clear');
     \Tk\Uri::create()->reset()->redirect();
 }
 
 if ($request->has('view') && $config->getSession()->has('csvData')) {
     $html = makeTable($config->getSession()->get('csvData'));
     header('Content-Type: text/html; charset=utf-8');
+    vd('view');
     echo $html;
     exit;
 }
@@ -121,6 +126,7 @@ if ($request->has('view') && $config->getSession()->has('csvData')) {
 if ($request->has('down') && $config->getSession()->has('csvData')) {
     $html = makeTable($config->getSession()->get('csvData'));
     $filename = 'table.html';
+    vd('down');
     header('Content-Type: text/html; charset=utf-8');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="'.$filename.'"');
@@ -206,16 +212,16 @@ $form->execute();
 $csvData = $config->getSession()->get('csvData');
 if ($csvData) {
     $template->appendHtml('csv-table', makeTable($csvData));
-    $template->setChoice('csv-table');
-    $template->setAttr('download', 'href', \Tk\Uri::create()->set('down'));
-    $template->setAttr('view', 'href', \Tk\Uri::create()->set('view'));
-    $template->setAttr('clear', 'href', \Tk\Uri::create()->set('clear'));
+    $template->setVisible('csv-table');
+    $template->setAttr('download', 'href', \Tk\Uri::create()->reset()->set('down'));
+    $template->setAttr('view', 'href', \Tk\Uri::create()->reset()->set('view'));
+    $template->setAttr('clear', 'href', \Tk\Uri::create()->reset()->set('clear'));
 }
 
 
 
 if (\Tk\AlertCollection::hasMessages()) {
     $template->appendTemplate('alert', \Tk\AlertCollection::getInstance()->show());
-    $template->setChoice('alert');
+    $template->setVisible('alert');
 }
 echo $template->toString();
