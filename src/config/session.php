@@ -1,9 +1,12 @@
 <?php
 
+$config = \Tk\Config::getInstance();
+
 /*
  * It must contain only alphanumeric characters and underscores. At least one letter must be present.
  */
-$config['session.name'] = 'sn_' . substr(md5(dirname(__FILE__)), 0, 16);
+//$config['session.name'] = 'sn_' . substr(md5(dirname(__FILE__)), 0, 16);
+$config['session.name'] = 'sn_' . substr(md5(\Tk\Uri::create($config->getSiteUrl())->toString()), 0, 32);
 
 /*
  * Enable or disable session encryption.
@@ -48,6 +51,12 @@ $config['session.gc_divisor'] = 100;
  * Session parameters to validate: user_agent, ip_address, expiration.
  */
 $config['session.validate'] = array('user_agent');
+
+
+/*
+ * defaults to server session folder
+ */
+//$config['session.save_path'] = '/tmp';
 
 
 
