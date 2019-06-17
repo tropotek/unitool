@@ -15,13 +15,6 @@ include_once $sitePath.'/src/App/Bootstrap.php';
 $config = \App\Config::getInstance();
 $config->set('composer', $composer);
 
-
-$config->setRequest(\Tk\Request::createFromGlobals());
-$config->setSession(\Tk\Session::getInstance()->start());
-
-//$config['debug'] = true;
-//$config['log.path'] = '/home/mifsudm/log/error.log';
-
 $sitePath = dirname(__FILE__);
 /** @var \Composer\Autoload\ClassLoader $composer */
 $composer = include($sitePath . '/vendor/autoload.php');
