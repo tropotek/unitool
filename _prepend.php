@@ -16,9 +16,6 @@ $config = \App\Config::getInstance();
 $config->set('composer', $composer);
 
 
-//\Tk\Request::setFactory(function (array $query = [], array $request = [], array $attributes = [], array $cookies = [], array $files = [], array $server = [], $content = null) {
-//    return new \Tk\Request($query, array_merge($query, $request), $attributes, $cookies, $files, $server, $content);
-//});
 $config->setRequest(\Tk\Request::createFromGlobals());
 $config->setSession(\Tk\Session::getInstance()->start());
 

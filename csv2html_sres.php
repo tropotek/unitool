@@ -105,20 +105,15 @@ $buff = trim(ob_get_clean());
 $template = \Dom\Template::load($buff);
 $template->replaceTemplate('nav', \App\Ui\Nav::create()->show());
 
-vd($config->getSession()->all());
-vd($config->getRequest());
-
 $request = $config->getRequest();
 if ($request->has('clear')) {
     $config->getSession()->remove('csvData');
-    vd('clear');
     \Tk\Uri::create()->reset()->redirect();
 }
 
 if ($request->has('view') && $config->getSession()->has('csvData')) {
     $html = makeTable($config->getSession()->get('csvData'));
     header('Content-Type: text/html; charset=utf-8');
-    vd('view');
     echo $html;
     exit;
 }
@@ -126,7 +121,6 @@ if ($request->has('view') && $config->getSession()->has('csvData')) {
 if ($request->has('down') && $config->getSession()->has('csvData')) {
     $html = makeTable($config->getSession()->get('csvData'));
     $filename = 'table.html';
-    vd('down');
     header('Content-Type: text/html; charset=utf-8');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="'.$filename.'"');
