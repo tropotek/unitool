@@ -152,7 +152,7 @@ HTML;
         $cell->appendRepeat();
         foreach ($rowData as $key => $val) {
             $cell = $row->getRepeat('cell');
-            $cell->insertText('url', $key);
+            $cell->insertText('url', \Tk\Str::ucSplit($key));
             $cell->setAttr('url', 'title', $key);
             $cell->setAttr('url', 'href', $val);
             $cell->appendRepeat();
