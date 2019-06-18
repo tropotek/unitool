@@ -63,9 +63,7 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
       <form id="upload" method="post" class="form-horizontal" role="form">
         <div class="text-danger" var="form-error" choice="form-error"></div>
         <div class="form-group">
-          <label for="contactEmail" class="col-sm-3 control-label">
-            <b>Sres CSV File</b>
-          </label>
+          <label for="upload-csv-file" class="col-sm-3 control-label">Sres CSV File</label>
           <div class="col-sm-3">
             <input type="file" name="csv-file" id="fid-csv-file" />
             <div class="text-danger" var="csv-file-error" choice="csv-file-error"></div>
@@ -74,7 +72,15 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
             <button type="submit" class="btn btn-primary" name="submit">Convert!!!!</button>
           </div>
         </div>
-
+        <div class="form-group">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3">
+            <label for="upload-singleMode"><input type="checkbox" name="singleMode" value="singleMode" id="upload-singleMode" checked="checked"/> Single Mode</label> &nbsp;
+            <label for="upload-bulkMode"><input type="checkbox" name="bulkMode" value="bulkMode" id="upload-bulkMode" /> Bulk Mode</label> &nbsp;
+            <label for="upload-roleView"><input type="checkbox" name="roleView" value="roleView" id="upload-roleView" /> Role View</label>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
 
       </form>
       <hr/>
@@ -82,8 +88,8 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
       <div choice="csv-table">
         <div class="csv-table" var="csv-table"></div>
         <div>
-          <a href="#" class="btn btn-success" title="Download Html File" var="download"><i class="fa fa-download"></i> Download</a>
-          <a href="#" class="btn btn-primary" title="View Html File" target="_blank" var="view"><i class="fa fa-eye"></i> View</a>
+          <a href="#" class="btn btn-success" title="Download Html File" var="download"><i class="fa fa-download"></i> Download</a> &nbsp;
+          <a href="#" class="btn btn-primary" title="View Html File" target="_blank" var="view"><i class="fa fa-eye"></i> View</a> &nbsp;
           <a href="#" class="btn btn-default" title="Clear The Data" onclick="return confirm('Are you sure you want to remove the csv data from memory?');" var="clear"><i class="fa fa-trash"></i> Clear</a>
         </div>
       </div>
@@ -133,17 +139,25 @@ function makeTable($csvData) {
     $tpl = <<<HTML
 <table var="table" cellpadding="4" cellspacing="0" border="1">
   <tr var="row" repeat="row">
-    <td var="cell"><a href="#" var="url" target="_blank">&nbsp;</a></td>
+    <td var="cell" repeat="cell"><a href="#" var="url" target="_blank">&nbsp;</a></td>
   </tr>
 </table>
 HTML;
     $template = \Dom\Loader::load($tpl);
 
-    foreach ($csvData as $name => $url) {
-      $row = $template->getRepeat('row');
-      $row->insertText('url', $name);
-      $row->setAttr('url', 'href', $url);
-      $row->appendRepeat();
+    foreach ($csvData as $name => $rowData) {
+        $row = $template->getRepeat('row');
+        $cell = $row->getRepeat('cell');
+        $cell->insertText('cell', $name);
+        $cell->appendRepeat();
+        foreach ($rowData as $key => $val) {
+            $cell = $row->getRepeat('cell');
+            $cell->insertText('url', $key);
+            $cell->setAttr('url', 'title', $key);
+            $cell->setAttr('url', 'href', $val);
+            $cell->appendRepeat();
+        }
+        $row->appendRepeat();
     }
 
     return $template->toString();
@@ -153,6 +167,10 @@ HTML;
 $form = Form::create('upload');
 /** @var \Tk\Form\Field\File $fileField */
 $fileField = $form->appendField(new Field\File('csv-file'));
+$form->appendField(Field\Checkbox::create('singleMode'));
+$form->appendField(Field\Checkbox::create('bulkMode'));
+$form->appendField(Field\Checkbox::create('roleView'));
+
 $fileField->setMaxFileSize(1024*1024*5);
 $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
 {
@@ -179,15 +197,19 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
                 $num = count($data);
                 if ($data[0] == 'Column name' || $data[0] == '!BARCODE') continue;
                 $name = '';
-                $url = '';
+                $rowData = array();
                 for ($c=0; $c < $num; $c++) {
-                    if ($c == 0) {   // Column Name
+                    if ($c == 0) {            // Column Name
                         $name = $data[$c];
-                    } else if ($c == 5) {    // Single Mode Link
-                        $url = $data[$c];
+                    } else if ($c == 5 && $form->getFieldValue('singleMode')) {     // Single Mode Link
+                        $rowData['singleMode'] = $data[$c];
+                    } else if ($c == 6 && $form->getFieldValue('bulkMode')) {     // Bulk Mode Link
+                        $rowData['bulkMode'] = $data[$c];
+                    } else if ($c == 7 && $form->getFieldValue('roleView')) {     // Role View Link
+                        $rowData['roleView'] = $data[$c];
                     }
                 }
-                $csvData[$name] = $url;
+                $csvData[$name] = $rowData;
             }
             ksort($csvData, \SORT_NATURAL);
             $config->getSession()->set('csvData', $csvData);
@@ -199,6 +221,7 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
 }
 ));
 $form->execute();
+
 // Render the form
 \Tk\Form\Renderer\DomStatic::create($form, $template)->show();
 
@@ -211,8 +234,6 @@ if ($csvData) {
     $template->setAttr('view', 'href', \Tk\Uri::create()->reset()->set('view'));
     $template->setAttr('clear', 'href', \Tk\Uri::create()->reset()->set('clear'));
 }
-
-
 
 if (\Tk\AlertCollection::hasMessages()) {
     $template->appendTemplate('alert', \Tk\AlertCollection::getInstance()->show());
