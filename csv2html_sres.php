@@ -134,6 +134,23 @@ if ($request->has('down') && $config->getSession()->has('csvData')) {
     exit;
 }
 
+
+function getLabel($str = '')
+{
+  switch ($str) {
+      case 'singleMode':
+          $str = 'Barcode Scanner Link';
+          break;
+      case 'bulkMode':
+          $str = 'Bulk Mode Link';
+          break;
+      case 'roleView':
+          $str = 'Roll Call Link';
+          break;
+  }
+  return $str;
+}
+
 // Make the table HTMl and return it
 function makeTable($csvData) {
     $tpl = <<<HTML
@@ -147,16 +164,28 @@ HTML;
 
     foreach ($csvData as $name => $rowData) {
         $row = $template->getRepeat('row');
-        $cell = $row->getRepeat('cell');
-        $cell->insertText('cell', $name);
-        $cell->appendRepeat();
-        foreach ($rowData as $key => $val) {
+
+        if (count($rowData) > 1) {
             $cell = $row->getRepeat('cell');
-            $cell->insertText('url', \Tk\Str::ucSplit($key));
-            $cell->setAttr('url', 'title', $key);
-            $cell->setAttr('url', 'href', $val);
+            $cell->insertText('cell', $name);
             $cell->appendRepeat();
+            foreach ($rowData as $key => $val) {
+                $cell = $row->getRepeat('cell');
+                $cell->insertText('url', getLabel($key));
+                $cell->setAttr('url', 'title', \Tk\Str::ucSplit($key));
+                $cell->setAttr('url', 'href', $val);
+                $cell->appendRepeat();
+            }
+        } else {
+            foreach ($rowData as $key => $val) {
+                $cell = $row->getRepeat('cell');
+                $cell->insertText('url', $name);
+                $cell->setAttr('url', 'title', \Tk\Str::ucSplit($key));
+                $cell->setAttr('url', 'href', $val);
+                $cell->appendRepeat();
+            }
         }
+
         $row->appendRepeat();
     }
 
