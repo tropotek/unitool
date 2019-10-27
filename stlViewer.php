@@ -65,9 +65,9 @@ ob_start();
         <div class="col-md-12">
           <p>
             Example Models:
-            <a href="js/models/horseLarynx-01.stl">Horse Larynx (5.7M)</a> |
-            <a href="js/models/PawSplint3.stl">Cat Paw Splint (1.5M)</a> |
-            <a href="js/models/CowLowerLeg_Scanned.stl">Cow Lower Leg (9.7M)</a>
+            <a href="js/models/horseLarynx-01.stl" data-src="https://www.thingiverse.com/thing:3941229">Horse Larynx (5.7M)</a> |
+            <a href="js/models/PawSplint3.stl" data-src="https://www.thingiverse.com/thing:1580170">Cat Paw Splint (1.5M)</a> |
+            <a href="js/models/CowLowerLeg_Scanned.stl" data-src="https://www.thingiverse.com/thing:3749674">Cow Lower Leg (9.7M)</a>
           </p>
           <hr/>
         </div>
@@ -85,7 +85,7 @@ ob_start();
 
       <div class="row">
         <div class="col-md-12">
-          <div style="text-align: center;">
+          <div style="text-align: center;" class="panel">
             <span id="model-panel" class="model-panel" style="display: inline-block;margin-left: auto; margin-right: auto;"></span>
           </div>
         </div>
