@@ -34,15 +34,15 @@
         }
     },
     "require":  {
-        "php": "^7.2.0",
+        "php": "^7.3.0",
 
-        "ttek/tk-framework": "~3.0",
-        "ttek/tk-installers": "~3.0",
-        "ttek/tk-database": "~3.0",
-        "ttek/tk-domtemplate": "~3.0",
-        "ttek/tk-form": "~3.0",
-        "ttek/tk-table": "~3.0",
-        "ttek/tk-mail": "~3.0"
+        "ttek/tk-framework": "~3.0.0",
+        "ttek/tk-installers": "~3.0.0",
+        "ttek/tk-database": "~3.2.0",
+        "ttek/tk-domtemplate": "~3.0.0",
+        "ttek/tk-form": "~3.0.0",
+        "ttek/tk-table": "~3.0.0",
+        "ttek/tk-mail": "~3.0.0"
     },
     "require-dev":  {
     }
