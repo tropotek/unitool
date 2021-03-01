@@ -504,16 +504,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-form.git",
-                "reference": "c372b823b1e0d62e11febdd48f4bdb24bfea7c4d"
+                "reference": "85ca57e96437ff8a9b0d414c789200d24e4dbd31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-form/zipball/c372b823b1e0d62e11febdd48f4bdb24bfea7c4d",
-                "reference": "c372b823b1e0d62e11febdd48f4bdb24bfea7c4d",
+                "url": "https://api.github.com/repos/tropotek/tk-form/zipball/85ca57e96437ff8a9b0d414c789200d24e4dbd31",
+                "reference": "85ca57e96437ff8a9b0d414c789200d24e4dbd31",
                 "shasum": ""
             },
             "require": {
-                "ttek/tk-framework": "~3.0.0"
+                "ttek/tk-framework": "~3.0.0",
+                "ttek/tk-ui": "~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -542,7 +543,7 @@
                 "form",
                 "tropotek"
             ],
-            "time": "2021-02-25T20:36:34+00:00"
+            "time": "2021-03-01T02:14:09+00:00"
         },
         {
             "name": "ttek/tk-framework",
@@ -747,6 +748,53 @@
                 "tropotek"
             ],
             "time": "2021-02-25T02:25:22+00:00"
+        },
+        {
+            "name": "ttek/tk-ui",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tropotek/tk-ui.git",
+                "reference": "a60363cf175bf9f5aa30dac8fcabf97a047fae1f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tropotek/tk-ui/zipball/a60363cf175bf9f5aa30dac8fcabf97a047fae1f",
+                "reference": "a60363cf175bf9f5aa30dac8fcabf97a047fae1f",
+                "shasum": ""
+            },
+            "require": {
+                "ttek/tk-framework": "~3.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Tk\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mifsud",
+                    "email": "info@tropotek.com.au",
+                    "homepage": "http://www.tropotek.com/"
+                }
+            ],
+            "description": "A bootstrap based UI lib for the Tk-lib framework",
+            "keywords": [
+                "bootstrap",
+                "tropotek",
+                "ui"
+            ],
+            "time": "2021-02-25T22:45:44+00:00"
         },
         {
             "name": "wikimedia/less.php",

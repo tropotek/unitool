@@ -63,8 +63,8 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
       <form id="upload" method="post" class="form-horizontal" role="form">
         <div class="text-danger" var="form-error" choice="form-error"></div>
         <div class="form-group">
-          <label for="upload-csv-file" class="col-sm-3 control-label">Sres CSV File</label>
-          <div class="col-sm-3">
+          <label for="upload-csv-file" class="col-sm-4 control-label">Sres CSV File</label>
+          <div class="col-sm-2">
             <input type="file" name="csv-file" id="fid-csv-file" />
             <div class="text-danger" var="csv-file-error" choice="csv-file-error"></div>
           </div>
@@ -74,10 +74,11 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
         </div>
         <div class="form-group">
           <div class="col-sm-3"></div>
-          <div class="col-sm-3">
+          <div class="col-sm-5 text-center">
             <label for="upload-singleMode"><input type="checkbox" name="singleMode" value="singleMode" id="upload-singleMode" checked="checked"/> Single Mode</label> &nbsp;
             <label for="upload-bulkMode"><input type="checkbox" name="bulkMode" value="bulkMode" id="upload-bulkMode" /> Bulk Mode</label> &nbsp;
-            <label for="upload-roleView"><input type="checkbox" name="roleView" value="roleView" id="upload-roleView" /> Role View</label>
+            <label for="upload-roleView"><input type="checkbox" name="roleView" value="roleView" id="upload-roleView" /> Role View</label> &nbsp;
+            <label for="upload-directAccess"><input type="checkbox" name="directAccess" value="directAccess" id="upload-directAccess" /> Self Checkin (QR-Code)</label>
           </div>
           <div class="col-sm-6"></div>
         </div>
@@ -147,8 +148,8 @@ function getLabel($str = '')
       case 'roleView':
           $str = 'Roll Call Link';
           break;
-      case 'roleView':
-          $str = 'Roll Call Link';
+      case 'directAccess':
+          $str = 'Student Self-checking (QR-Code)';
           break;
   }
   return $str;
@@ -228,7 +229,11 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
         if (($handle = fopen($fileField->getUploadedFile()->getPathname(), 'r')) !== false) {
             while (($data = fgetcsv($handle, 1000, ',')) !== false) {
                 $num = count($data);
-                if ($data[0] == 'Column name' || $data[0] == '!BARCODE') continue;
+                if (strtolower($data[0]) == strtolower('Column name') ||
+                    strtolower($data[0]) == strtolower('!BARCODE') ||
+                    strtolower($data[0]) == strtolower('!ATTENDED'))
+                  continue;
+
                 $name = '';
                 $rowData = array();
                 for ($c=0; $c < $num; $c++) {
