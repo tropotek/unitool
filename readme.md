@@ -1,11 +1,11 @@
-# tk2simple :boom: 
+# unitool :boom: 
 
-__Project:__ tk2simple  
+__Project:__ unitool  
 __Published:__ 01 Nov 2015  
 __Web:__ <http://www.tropotek.com/>  
 __Authors:__ Michael Mifsud <http://www.tropotek.com/>  
 
-A base site using the Tk2 framework on its own.
+In-house FVAS utility scripts for staff.
 
 ## Contents
 
@@ -17,8 +17,8 @@ A base site using the Tk2 framework on its own.
 Start by getting the dependant libs:
 
 ~~~bash
-# git clone https://github.com/tropotek/tk2simple.git
-# cd tk2simple
+# git clone https://github.com/tropotek/unitool.git
+# cd unitool
 # composer install
 ~~~
 
