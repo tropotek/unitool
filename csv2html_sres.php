@@ -160,7 +160,7 @@ function makeTable($csvData) {
     $tpl = <<<HTML
 <table var="table" cellpadding="4" cellspacing="0" border="1">
   <tr var="row" repeat="row">
-    <td var="cell" repeat="cell"><a href="#" var="url" target="_blank">&nbsp;</a></td>
+    <td var="cell" repeat="cell"><a href="#" var="url" target="_blank" choice="url">&nbsp;</a>&nbsp;</td>
   </tr>
 </table>
 HTML;
@@ -175,17 +175,23 @@ HTML;
             $cell->appendRepeat();
             foreach ($rowData as $key => $val) {
                 $cell = $row->getRepeat('cell');
-                $cell->insertText('url', getLabel($key));
-                $cell->setAttr('url', 'title', \Tk\Str::ucSplit($key));
-                $cell->setAttr('url', 'href', $val);
+                if ($val) {
+                    $cell->setVisible('url');
+                    $cell->insertText('url', getLabel($key));
+                    $cell->setAttr('url', 'title', \Tk\Str::ucSplit($key));
+                    $cell->setAttr('url', 'href', $val);
+                }
                 $cell->appendRepeat();
             }
         } else {
             foreach ($rowData as $key => $val) {
                 $cell = $row->getRepeat('cell');
-                $cell->insertText('url', $name);
-                $cell->setAttr('url', 'title', \Tk\Str::ucSplit($key));
-                $cell->setAttr('url', 'href', $val);
+                if ($val) {
+                    $cell->setVisible('url');
+                    $cell->insertText('url', $name);
+                    $cell->setAttr('url', 'title', \Tk\Str::ucSplit($key));
+                    $cell->setAttr('url', 'href', $val);
+                }
                 $cell->appendRepeat();
             }
         }
