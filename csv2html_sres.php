@@ -147,6 +147,9 @@ function getLabel($str = '')
       case 'roleView':
           $str = 'Roll Call Link';
           break;
+      case 'roleView':
+          $str = 'Roll Call Link';
+          break;
   }
   return $str;
 }
@@ -199,6 +202,7 @@ $fileField = $form->appendField(new Field\File('csv-file'));
 $form->appendField(Field\Checkbox::create('singleMode'));
 $form->appendField(Field\Checkbox::create('bulkMode'));
 $form->appendField(Field\Checkbox::create('roleView'));
+$form->appendField(Field\Checkbox::create('directAccess'));
 
 $fileField->setMaxFileSize(1024*1024*5);
 $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
@@ -236,6 +240,8 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
                         $rowData['bulkMode'] = $data[$c];
                     } else if ($c == 7 && $form->getFieldValue('roleView')) {     // Role View Link
                         $rowData['roleView'] = $data[$c];
+                    } else if ($c == 8 && $form->getFieldValue('directAccess')) {     // Student direct access link
+                        $rowData['directAccess'] = $data[$c];
                     }
                 }
                 $csvData[$name] = $rowData;
