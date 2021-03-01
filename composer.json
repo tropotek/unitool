@@ -41,8 +41,7 @@
     "ttek/tk-domtemplate": "~3.0.0",
     "ttek/tk-form": "~3.0.0",
     "ttek/tk-table": "~3.0.0",
-    "ttek/tk-mail": "~3.0.0",
-    "ttek/tk-ui": "~3.0.0"
+    "ttek/tk-mail": "~3.0.0"
   },
   "require-dev": {
   }

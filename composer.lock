@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "558c29ad58cb78f5f754b18c0434ba16",
+    "content-hash": "c5a7dc7fecbd375632d8efa276194d14",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -747,6 +747,53 @@
                 "tropotek"
             ],
             "time": "2021-02-25T02:25:22+00:00"
+        },
+        {
+            "name": "ttek/tk-ui",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tropotek/tk-ui.git",
+                "reference": "a60363cf175bf9f5aa30dac8fcabf97a047fae1f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tropotek/tk-ui/zipball/a60363cf175bf9f5aa30dac8fcabf97a047fae1f",
+                "reference": "a60363cf175bf9f5aa30dac8fcabf97a047fae1f",
+                "shasum": ""
+            },
+            "require": {
+                "ttek/tk-framework": "~3.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Tk\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mifsud",
+                    "email": "info@tropotek.com.au",
+                    "homepage": "http://www.tropotek.com/"
+                }
+            ],
+            "description": "A bootstrap based UI lib for the Tk-lib framework",
+            "keywords": [
+                "bootstrap",
+                "tropotek",
+                "ui"
+            ],
+            "time": "2021-02-25T22:45:44+00:00"
         },
         {
             "name": "wikimedia/less.php",
