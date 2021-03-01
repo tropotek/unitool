@@ -78,7 +78,7 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
             <label for="upload-singleMode"><input type="checkbox" name="singleMode" value="singleMode" id="upload-singleMode" checked="checked"/> Single Mode</label> &nbsp;
             <label for="upload-bulkMode"><input type="checkbox" name="bulkMode" value="bulkMode" id="upload-bulkMode" /> Bulk Mode</label> &nbsp;
             <label for="upload-roleView"><input type="checkbox" name="roleView" value="roleView" id="upload-roleView" /> Role View</label> &nbsp;
-            <label for="upload-directAccess"><input type="checkbox" name="directAccess" value="directAccess" id="upload-directAccess" /> Self Checkin (QR-Code)</label>
+            <label for="upload-directAccess"><input type="checkbox" name="directAccess" value="directAccess" id="upload-directAccess" /> Self Check-In (QR-Code)</label>
           </div>
           <div class="col-sm-6"></div>
         </div>
@@ -149,7 +149,7 @@ function getLabel($str = '')
           $str = 'Roll Call Link';
           break;
       case 'directAccess':
-          $str = 'Student Self-checking (QR-Code)';
+          $str = 'Student Self Check-In (QR-Code)';
           break;
   }
   return $str;
