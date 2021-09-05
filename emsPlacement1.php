@@ -167,10 +167,9 @@ $form->appendField(new Event\Button('submit', function (\Tk\Form $form)
     foreach ($csvData as $row)
       fputcsv($out, $row);
     fclose($out);
-
+    exit();
     //vd($csvData);
-
-    \Tk\Uri::create()->redirect();
+    //\Tk\Uri::create()->redirect();
 }
 ));
 $form->execute();
