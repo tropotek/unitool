@@ -1,48 +1,48 @@
 {
-    "name": "ttek/tk2simple",
-    "type": "project",
-    "description": "A simple site for FVAS elearning scripts",
-    "keywords":  [
-        "tropotek"
-    ],
-    "time": "2021-09-06",
-    "license": "MIT",
-    "minimum-stability": "stable",
-    "authors":  [
-         {
-            "name": "Michael Mifsud",
-            "email": "info@tropotek.com.au",
-            "homepage": "http://www.tropotek.com/"
-        }
-    ],
-    "autoload":  {
-        "psr-0":  {
-            "": "src/"
-        }
-    },
-    "scripts":  {
-        "post-install-cmd":  [
-            "Tk\\Composer\\InitProjectEvent::postInstall"
-        ],
-        "post-update-cmd":  [
-            "Tk\\Composer\\InitProjectEvent::postUpdate"
-        ]
-    },
-    "extra":  {
-        "branch-alias":  {
-            "dev-master": "3.0.x-dev"
-        }
-    },
-    "require":  {
-        "php": "^7.3.0",
-        "ttek/tk-framework": "~3.0.0",
-        "ttek/tk-installers": "~3.0.0",
-        "ttek/tk-database": "~3.2.0",
-        "ttek/tk-domtemplate": "~3.0.0",
-        "ttek/tk-form": "~3.0.0",
-        "ttek/tk-table": "~3.0.0",
-        "ttek/tk-mail": "~3.0.0"
-    },
-    "require-dev":  {
+  "name": "ttek/tk2simple",
+  "type": "project",
+  "description": "A simple site for FVAS elearning scripts",
+  "keywords": [
+    "tropotek"
+  ],
+  "time": "2018-05-29",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Michael Mifsud",
+      "email": "info@tropotek.com.au",
+      "homepage": "http://www.tropotek.com/"
     }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Tk\\Composer\\InitProjectEvent::postInstall"
+    ],
+    "post-update-cmd": [
+      "Tk\\Composer\\InitProjectEvent::postUpdate"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.0.x-dev"
+    }
+  },
+  "require": {
+    "php": "^7.3.0",
+    "ttek/tk-framework": "~3.0.0",
+    "ttek/tk-installers": "~3.0.0",
+    "ttek/tk-database": "~3.2.0",
+    "ttek/tk-domtemplate": "~3.0.0",
+    "ttek/tk-form": "~3.0.0",
+    "ttek/tk-table": "~3.0.0",
+    "ttek/tk-mail": "~3.0.0"
+  },
+  "require-dev": {
+  }
 }
