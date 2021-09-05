@@ -69,7 +69,7 @@ No CSS; a couple of basic table attributes given in OUTPUT.HTML are all that's n
             <div class="text-danger" var="csv-file-error" choice="csv-file-error"></div>
           </div>
           <div class="col-sm-6">
-            <button type="submit" class="btn btn-primary" name="submit">Convert!!!!</button>
+            <button type="submit" class="btn btn-primary" name="submit">Convert</button>
           </div>
         </div>
         <div class="form-group">

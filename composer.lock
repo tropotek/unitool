@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "2209ddd84e7ef1256b7af205d0717fb62cfc9c33"
+                "reference": "c6b00f05152ae2c9b04a448f99c7590beb6042f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/2209ddd84e7ef1256b7af205d0717fb62cfc9c33",
-                "reference": "2209ddd84e7ef1256b7af205d0717fb62cfc9c33",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c6b00f05152ae2c9b04a448f99c7590beb6042f5",
+                "reference": "c6b00f05152ae2c9b04a448f99c7590beb6042f5",
                 "shasum": ""
             },
             "require": {
@@ -76,6 +76,10 @@
                 "logging",
                 "psr-3"
             ],
+            "support": {
+                "issues": "https://github.com/Seldaek/monolog/issues",
+                "source": "https://github.com/Seldaek/monolog/tree/1.26.1"
+            },
             "funding": [
                 {
                     "url": "https://github.com/Seldaek",
@@ -86,20 +90,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-14T12:56:38+00:00"
+            "time": "2021-05-28T08:32:12+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.3.0",
+            "version": "v6.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb"
+                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb",
-                "reference": "4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/dd803df5ad7492e1b40637f7ebd258fee5ca7355",
+                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355",
                 "shasum": ""
             },
             "require": {
@@ -111,13 +115,15 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
                 "doctrine/annotations": "^1.2",
+                "php-parallel-lint/php-console-highlighter": "^0.5.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3",
                 "phpcompatibility/php-compatibility": "^9.3.5",
                 "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.5.6",
-                "yoast/phpunit-polyfills": "^0.2.0"
+                "squizlabs/php_codesniffer": "^3.6.0",
+                "yoast/phpunit-polyfills": "^1.0.0"
             },
             "suggest": {
-                "ext-mbstring": "Needed to send email in multibyte encoding charset",
+                "ext-mbstring": "Needed to send email in multibyte encoding charset or decode encoded addresses",
                 "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
                 "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
                 "psr/log": "For optional PSR-3 debug logging",
@@ -152,26 +158,30 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "support": {
+                "issues": "https://github.com/PHPMailer/PHPMailer/issues",
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.1"
+            },
             "funding": [
                 {
                     "url": "https://github.com/Synchro",
                     "type": "github"
                 }
             ],
-            "time": "2021-02-19T15:28:08+00:00"
+            "time": "2021-08-18T09:14:16+00:00"
         },
         {
             "name": "psr/log",
-            "version": "dev-master",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "dd738d0b4491f32725492cf345f6b501f5922fec"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/dd738d0b4491f32725492cf345f6b501f5922fec",
-                "reference": "dd738d0b4491f32725492cf345f6b501f5922fec",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +215,10 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2020-09-18T06:44:51+00:00"
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "scssphp/scssphp",
@@ -266,6 +279,10 @@
                 "scss",
                 "stylesheet"
             ],
+            "support": {
+                "issues": "https://github.com/scssphp/scssphp/issues",
+                "source": "https://github.com/scssphp/scssphp/tree/1.0.9"
+            },
             "time": "2020-04-01T15:23:18+00:00"
         },
         {
@@ -320,6 +337,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-foundation/tree/4.2"
+            },
             "time": "2019-11-11T12:54:47+00:00"
         },
         {
@@ -328,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1"
+                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/5232de97ee3b75b0360528dae24e73db49566ab1",
-                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
                 "shasum": ""
             },
             "require": {
@@ -342,10 +362,11 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -383,6 +404,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -397,7 +421,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-22T09:19:47+00:00"
+            "time": "2021-05-27T12:26:48+00:00"
         },
         {
             "name": "ttek/tk-database",
@@ -405,12 +429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-database.git",
-                "reference": "d7f4db1d6ed9e0c2d91198b20b2b71d8ee26f3bf"
+                "reference": "2e67f03451675696b27d7529eadfa0fd5867bc03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-database/zipball/d7f4db1d6ed9e0c2d91198b20b2b71d8ee26f3bf",
-                "reference": "d7f4db1d6ed9e0c2d91198b20b2b71d8ee26f3bf",
+                "url": "https://api.github.com/repos/tropotek/tk-database/zipball/2e67f03451675696b27d7529eadfa0fd5867bc03",
+                "reference": "2e67f03451675696b27d7529eadfa0fd5867bc03",
                 "shasum": ""
             },
             "require": {
@@ -445,7 +469,17 @@
                 "database",
                 "tropotek"
             ],
-            "time": "2021-01-29T03:11:39+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-database/issues",
+                "source": "https://github.com/tropotek/tk-database/tree/3.2"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-domtemplate",
@@ -453,12 +487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-domtemplate.git",
-                "reference": "f3d3c8bc40af2b3fbbaaee4a38c54b1bf643a794"
+                "reference": "8c16281f6113451f813ee399f6eaa9d34809d1d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-domtemplate/zipball/f3d3c8bc40af2b3fbbaaee4a38c54b1bf643a794",
-                "reference": "f3d3c8bc40af2b3fbbaaee4a38c54b1bf643a794",
+                "url": "https://api.github.com/repos/tropotek/tk-domtemplate/zipball/8c16281f6113451f813ee399f6eaa9d34809d1d4",
+                "reference": "8c16281f6113451f813ee399f6eaa9d34809d1d4",
                 "shasum": ""
             },
             "require": {
@@ -496,7 +530,17 @@
                 "dom-template",
                 "tropotek"
             ],
-            "time": "2021-02-25T20:36:48+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-domtemplate/issues",
+                "source": "https://github.com/tropotek/tk-domtemplate/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-form",
@@ -504,12 +548,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-form.git",
-                "reference": "85ca57e96437ff8a9b0d414c789200d24e4dbd31"
+                "reference": "a0d053fe78f91fb921868b42158b577e076e19c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-form/zipball/85ca57e96437ff8a9b0d414c789200d24e4dbd31",
-                "reference": "85ca57e96437ff8a9b0d414c789200d24e4dbd31",
+                "url": "https://api.github.com/repos/tropotek/tk-form/zipball/a0d053fe78f91fb921868b42158b577e076e19c8",
+                "reference": "a0d053fe78f91fb921868b42158b577e076e19c8",
                 "shasum": ""
             },
             "require": {
@@ -543,7 +587,17 @@
                 "form",
                 "tropotek"
             ],
-            "time": "2021-03-01T02:14:09+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-form/issues",
+                "source": "https://github.com/tropotek/tk-form/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-framework",
@@ -551,12 +605,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-framework.git",
-                "reference": "b8d84293c19ee522b487b0f7b5dc24f94410242b"
+                "reference": "e45e501af36249b6155109376195f9e6a1cad058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-framework/zipball/b8d84293c19ee522b487b0f7b5dc24f94410242b",
-                "reference": "b8d84293c19ee522b487b0f7b5dc24f94410242b",
+                "url": "https://api.github.com/repos/tropotek/tk-framework/zipball/e45e501af36249b6155109376195f9e6a1cad058",
+                "reference": "e45e501af36249b6155109376195f9e6a1cad058",
                 "shasum": ""
             },
             "require": {
@@ -602,24 +656,34 @@
                 "framework",
                 "tropotek"
             ],
-            "time": "2021-02-17T21:40:12+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-framework/issues",
+                "source": "https://github.com/tropotek/tk-framework/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-installers",
-            "version": "3.0.20",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-installers.git",
-                "reference": "35ffb2dbe8e25a9c5035dfe619b11c281ec7a2c9"
+                "reference": "795354fbc1e2c87fcba4c67eae5e276799f10708"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-installers/zipball/35ffb2dbe8e25a9c5035dfe619b11c281ec7a2c9",
-                "reference": "35ffb2dbe8e25a9c5035dfe619b11c281ec7a2c9",
+                "url": "https://api.github.com/repos/tropotek/tk-installers/zipball/795354fbc1e2c87fcba4c67eae5e276799f10708",
+                "reference": "795354fbc1e2c87fcba4c67eae5e276799f10708",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.1"
+                "composer-plugin-api": "^2.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -654,7 +718,17 @@
                 "tools",
                 "tropotek"
             ],
-            "time": "2020-11-23T00:00:00+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-installers/issues",
+                "source": "https://github.com/tropotek/tk-installers/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-mail",
@@ -662,12 +736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-mail.git",
-                "reference": "685f5232f07ff7849659c6acce368b3c168d0ca6"
+                "reference": "d73f9add4cf94915b57e0245a979eda9cc5ae5e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-mail/zipball/685f5232f07ff7849659c6acce368b3c168d0ca6",
-                "reference": "685f5232f07ff7849659c6acce368b3c168d0ca6",
+                "url": "https://api.github.com/repos/tropotek/tk-mail/zipball/d73f9add4cf94915b57e0245a979eda9cc5ae5e5",
+                "reference": "d73f9add4cf94915b57e0245a979eda9cc5ae5e5",
                 "shasum": ""
             },
             "require": {
@@ -701,7 +775,17 @@
                 "table",
                 "tropotek"
             ],
-            "time": "2021-02-24T00:15:01+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-mail/issues",
+                "source": "https://github.com/tropotek/tk-mail/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-table",
@@ -709,12 +793,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-table.git",
-                "reference": "b376fff4643d272caaeadc9c18dde2e9b66857e3"
+                "reference": "e021c58bed21c34da6202b2f08fb67f6c666ba13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-table/zipball/b376fff4643d272caaeadc9c18dde2e9b66857e3",
-                "reference": "b376fff4643d272caaeadc9c18dde2e9b66857e3",
+                "url": "https://api.github.com/repos/tropotek/tk-table/zipball/e021c58bed21c34da6202b2f08fb67f6c666ba13",
+                "reference": "e021c58bed21c34da6202b2f08fb67f6c666ba13",
                 "shasum": ""
             },
             "require": {
@@ -747,7 +831,17 @@
                 "table",
                 "tropotek"
             ],
-            "time": "2021-02-25T02:25:22+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-table/issues",
+                "source": "https://github.com/tropotek/tk-table/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2020-11-12T00:00:00+00:00"
         },
         {
             "name": "ttek/tk-ui",
@@ -755,12 +849,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-ui.git",
-                "reference": "a60363cf175bf9f5aa30dac8fcabf97a047fae1f"
+                "reference": "810800c22587e4063cc8b39f57f067958b6b8a3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-ui/zipball/a60363cf175bf9f5aa30dac8fcabf97a047fae1f",
-                "reference": "a60363cf175bf9f5aa30dac8fcabf97a047fae1f",
+                "url": "https://api.github.com/repos/tropotek/tk-ui/zipball/810800c22587e4063cc8b39f57f067958b6b8a3f",
+                "reference": "810800c22587e4063cc8b39f57f067958b6b8a3f",
                 "shasum": ""
             },
             "require": {
@@ -794,7 +888,17 @@
                 "tropotek",
                 "ui"
             ],
-            "time": "2021-02-25T22:45:44+00:00"
+            "support": {
+                "issues": "https://github.com/tropotek/tk-ui/issues",
+                "source": "https://github.com/tropotek/tk-ui/tree/3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tropotek",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2019-04-09T00:00:00+00:00"
         },
         {
             "name": "wikimedia/less.php",
@@ -856,6 +960,9 @@
                 "php",
                 "stylesheet"
             ],
+            "support": {
+                "source": "https://github.com/wikimedia/less.php/tree/v1.7.0.14"
+            },
             "time": "2017-03-28T22:19:25+00:00"
         }
     ],
@@ -869,5 +976,5 @@
         "php": "^7.3.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

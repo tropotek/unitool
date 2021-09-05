@@ -56,6 +56,7 @@ class Nav extends \Dom\Renderer\Renderer implements \Dom\Renderer\DisplayInterfa
                 <li><a href="csv2html_sres.php"><i class="fa fa-file-text-o"></i> sres CSV2HTML</a></li>
                 <li><a href="imgbw.php"><i class="fa fa-picture-o"></i> image2BW</a></li>
                 <li><a href="stlViewer.php"><i class="fa fa-cube"></i> Stl Viewer</a></li>
+                <li><a href="emsPlacement1.php"><i class="fa fa-file-text-o"></i> EMS CSV1</a></li>
                 <!--<li><a href="contact.php">Contact</a></li>-->
             </ul>
         </div><!--/.nav-collapse -->
