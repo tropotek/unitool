@@ -348,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
+                "reference": "344e456152e22a1bce3048c6c311059ea14bde47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/344e456152e22a1bce3048c6c311059ea14bde47",
+                "reference": "344e456152e22a1bce3048c6c311059ea14bde47",
                 "shasum": ""
             },
             "require": {
@@ -405,7 +405,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/main"
             },
             "funding": [
                 {
@@ -421,7 +421,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T12:26:48+00:00"
+            "time": "2021-09-13T13:54:24+00:00"
         },
         {
             "name": "ttek/tk-database",
@@ -793,12 +793,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tropotek/tk-table.git",
-                "reference": "e021c58bed21c34da6202b2f08fb67f6c666ba13"
+                "reference": "cd866160b0b7e6486ebcd70503e090f7d958d366"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tropotek/tk-table/zipball/e021c58bed21c34da6202b2f08fb67f6c666ba13",
-                "reference": "e021c58bed21c34da6202b2f08fb67f6c666ba13",
+                "url": "https://api.github.com/repos/tropotek/tk-table/zipball/cd866160b0b7e6486ebcd70503e090f7d958d366",
+                "reference": "cd866160b0b7e6486ebcd70503e090f7d958d366",
                 "shasum": ""
             },
             "require": {
